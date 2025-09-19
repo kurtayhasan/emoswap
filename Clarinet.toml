@@ -1,0 +1,48 @@
+[project]
+name = "emoswap"
+description = "EmoSwap - Emotion-Based DeFi Protocol"
+authors = ["EmoSwap Team"]
+license = "MIT"
+repository = "https://github.com/emoswap/emoswap"
+
+[project.requirements]
+clarinet = ">=1.7.1"
+
+[contracts.emotion-factory]
+path = "contracts/emotion-factory.clar"
+
+[contracts.swap-pool]
+path = "contracts/swap-pool.clar"
+
+[contracts.liquidity-pool]
+path = "contracts/liquidity-pool.clar"
+
+[contracts.staking-rewards]
+path = "contracts/staking-rewards.clar"
+
+[contracts.governance]
+path = "contracts/governance.clar"
+
+[networks.testnet]
+name = "testnet"
+node_rpc_address = "https://stacks-node-api.testnet.stacks.co"
+node_p2p_address = "stacks-node-api.testnet.stacks.co:20443"
+deployment_fee_tx_url = "https://explorer.stacks.co/txid/"
+
+[networks.mainnet]
+name = "mainnet"
+node_rpc_address = "https://stacks-node-api.mainnet.stacks.co"
+node_p2p_address = "stacks-node-api.mainnet.stacks.co:20443"
+deployment_fee_tx_url = "https://explorer.stacks.co/txid/"
+
+[accounts.deployer]
+mnemonic = "blush hire mesh attract latin waste disease bulb supreme warfare pair bacon used faith together leave list fall wave skate rebel connect unit absorb"
+balance = 100000000000000
+
+[accounts.wallet_1]
+mnemonic = "blush hire mesh attract latin waste disease bulb supreme warfare pair bacon used faith together leave list fall wave skate rebel connect unit absorb"
+balance = 100000000000000
+
+[accounts.wallet_2]
+mnemonic = "blush hire mesh attract latin waste disease bulb supreme warfare pair bacon used faith together leave list fall wave skate rebel connect unit absorb"
+balance = 100000000000000

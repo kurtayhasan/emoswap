@@ -1,0 +1,112 @@
+[network]
+name = "testnet"
+deployment_fee_tx_url = "https://explorer.stacks.co/txid/"
+
+[accounts.deployer]
+mnemonic = "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+
+[accounts.wallet_1]
+mnemonic = "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+
+[accounts.wallet_2]
+mnemonic = "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+
+[[deployments]]
+name = "emotion-factory"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-happy"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-sad"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-angry"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-excited"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-calm"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-anxious"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-grateful"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "swap-pool-loved"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-happy"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-sad"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-angry"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-excited"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-calm"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-anxious"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-grateful"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "liquidity-pool-loved"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "staking-rewards"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "governance"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
+
+[[deployments]]
+name = "mood-token"
+address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+cost = 1000000
