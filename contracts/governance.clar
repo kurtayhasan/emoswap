@@ -1,14 +1,13 @@
 ;; EmoSwap - Governance Contract
 ;; Manages protocol parameters and voting
 
-(define-constant ADMIN (tx-sender))
+(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
+
 (define-constant VOTING-PERIOD (u10080)) ;; 1 week in blocks
 (define-constant QUORUM-THRESHOLD (u5000)) ;; 50%
-
 (define-data-var proposal-count uint u0)
 (define-data-var voting-period uint VOTING-PERIOD)
 (define-data-var quorum-threshold uint QUORUM-THRESHOLD)
-
 (define-map proposals uint 
   (tuple 
     (proposer principal)
@@ -20,10 +19,8 @@
     (executed bool)
   )
 )
-
 (define-map votes (tuple (proposal-id uint) (voter principal)) bool)
 (define-map voter-weights principal uint)
-
 ;; Error codes
 (define-constant ERR-UNAUTHORIZED (err u500))
 (define-constant ERR-PROPOSAL-NOT-FOUND (err u501))
@@ -31,7 +28,6 @@
 (define-constant ERR-ALREADY-VOTED (err u503))
 (define-constant ERR-PROPOSAL-NOT-EXECUTABLE (err u504))
 (define-constant ERR-INSUFFICIENT-VOTES (err u505))
-
 ;; Create proposal
 (define-public (create-proposal (description (string-utf8 1000)))
   (let
@@ -41,7 +37,7 @@
       (end-block (+ start-block (var-get voting-period)))
     )
     (begin
-      (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+      (asserts! (is-eq (tx-sender) (var-get admin)) ERR-UNAUTHORIZED)
       
       (ok (begin
         (map-set proposals proposal-id 
@@ -59,7 +55,6 @@
       ))
     )
   ))
-
 ;; Vote on proposal
 (define-public (vote (proposal-id uint) (support bool))
   (let
@@ -104,7 +99,6 @@
       ))
     )
   ))
-
 ;; Execute proposal
 (define-public (execute-proposal (proposal-id uint))
   (let
@@ -135,39 +129,33 @@
       ))
     )
   ))
-
 ;; Get proposal
 (define-read-only (get-proposal (proposal-id uint))
   (ok (map-get? proposals proposal-id))
 )
-
 ;; Get proposal count
 (define-read-only (get-proposal-count)
   (ok (var-get proposal-count))
 )
-
 ;; Get voter weight
 (define-read-only (get-voter-weight (voter principal))
   (ok (default-to u0 (map-get? voter-weights voter)))
 )
-
 ;; Set voter weight (admin only)
 (define-public (set-voter-weight (voter principal) (weight uint))
   (begin
-    (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (tx-sender) (var-get admin)) ERR-UNAUTHORIZED)
     (ok (map-set voter-weights voter weight))
   ))
-
 ;; Set quorum threshold
 (define-public (set-quorum-threshold (threshold uint))
   (begin
-    (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (tx-sender) (var-get admin)) ERR-UNAUTHORIZED)
     (ok (var-set quorum-threshold threshold))
   ))
-
 ;; Set voting period
 (define-public (set-voting-period (period uint))
   (begin
-    (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (tx-sender) (var-get admin)) ERR-UNAUTHORIZED)
     (ok (var-set voting-period period))
   ))

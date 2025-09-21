@@ -1,25 +1,22 @@
 ;; EmoSwap - Staking Rewards Contract
 ;; Manages LP token staking and $MOOD token rewards
 
-(define-constant ADMIN (tx-sender))
+(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
+
 (define-constant EMISSION-RATE (u100)) ;; 100 MOOD per block
 (define-constant REWARD-DENOMINATOR (u1000000))
-
 (define-data-var total-staked uint u0)
 (define-data-var emission-rate uint EMISSION-RATE)
 (define-data-var last-reward-block uint u0)
 (define-data-var reward-per-token-stored uint u0)
-
 (define-map staked-balances principal uint)
 (define-map user-reward-per-token-paid principal uint)
 (define-map rewards principal uint)
-
 ;; Error codes
 (define-constant ERR-UNAUTHORIZED (err u400))
 (define-constant ERR-INSUFFICIENT-BALANCE (err u401))
 (define-constant ERR-INVALID-AMOUNT (err u402))
 (define-constant ERR-NO-REWARDS (err u403))
-
 ;; Stake LP tokens
 (define-public (stake (amount uint))
   (let
@@ -48,7 +45,6 @@
       ))
     )
   ))
-
 ;; Unstake LP tokens
 (define-public (unstake (amount uint))
   (let
@@ -76,7 +72,6 @@
       ))
     )
   ))
-
 ;; Claim rewards
 (define-public (claim-rewards)
   (let
@@ -96,7 +91,6 @@
       ))
     )
   ))
-
 ;; Get reward per token
 (define-read-only (get-reward-per-token)
   (let
@@ -111,7 +105,6 @@
         (/ (* (var-get emission-rate) (- current-block last-block)) total-staked))
     )
   ))
-
 ;; Get user pending rewards
 (define-read-only (get-pending-rewards (user principal))
   (let
@@ -122,27 +115,23 @@
     (+ (default-to u0 (map-get? rewards user)) 
       (* user-staked (- current-reward-per-token (default-to u0 (map-get? user-reward-per-token-paid user)))))
   ))
-
 ;; Get user staked balance
 (define-read-only (get-staked-balance (user principal))
   (ok (default-to u0 (map-get? staked-balances user)))
 )
-
 ;; Get total staked
 (define-read-only (get-total-staked)
   (ok (var-get total-staked))
 )
-
 ;; Admin functions
 (define-public (set-emission-rate (rate uint))
   (begin
-    (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (tx-sender) (var-get admin)) ERR-UNAUTHORIZED)
     (ok (var-set emission-rate rate))
   ))
-
 (define-public (update-reward-per-token)
   (begin
-    (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (tx-sender) (var-get admin)) ERR-UNAUTHORIZED)
     (ok (begin
       (var-set reward-per-token-stored (get-reward-per-token))
       (var-set last-reward-block (block-height))

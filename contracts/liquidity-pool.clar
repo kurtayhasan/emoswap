@@ -1,29 +1,24 @@
 ;; EmoSwap - Liquidity Pool Contract
 ;; Manages liquidity provision for emotion/ALGO pairs
 
-(define-constant ADMIN (tx-sender))
-
+(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
 (define-data-var asset-id uint u0)
 (define-data-var total-liquidity uint u0)
 (define-data-var lp-token-supply uint u0)
-
 (define-map liquidity-providers principal uint)
 (define-map lp-tokens principal uint)
-
 ;; Error codes
 (define-constant ERR-UNAUTHORIZED (err u300))
 (define-constant ERR-INSUFFICIENT-LIQUIDITY (err u301))
 (define-constant ERR-INVALID-AMOUNT (err u302))
 (define-constant ERR-NOT-INITIALIZED (err u303))
-
 ;; Initialize pool
 (define-public (initialize-pool (token-asset-id uint))
   (begin
-    (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+    (asserts! (is-eq tx-sender (var-get admin)) ERR-UNAUTHORIZED)
     (asserts! (is-eq (var-get asset-id) u0) ERR-UNAUTHORIZED)
     (ok (var-set asset-id token-asset-id))
   ))
-
 ;; Add liquidity
 (define-public (add-liquidity (algo-amount uint) (asset-amount uint))
   (let
@@ -71,7 +66,6 @@
       )
     )
   ))
-
 ;; Remove liquidity
 (define-public (remove-liquidity (lp-token-amount uint))
   (let
@@ -100,22 +94,18 @@
       )
     )
   ))
-
 ;; Get total liquidity
 (define-read-only (get-total-liquidity)
   (ok (var-get total-liquidity))
 )
-
 ;; Get LP token supply
 (define-read-only (get-lp-token-supply)
   (ok (var-get lp-token-supply))
 )
-
 ;; Get user LP tokens
 (define-read-only (get-user-lp-tokens (user principal))
   (ok (default-to u0 (map-get? lp-tokens user)))
 )
-
 ;; Get user liquidity
 (define-read-only (get-user-liquidity (user principal))
   (ok (default-to u0 (map-get? liquidity-providers user)))

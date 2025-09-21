@@ -11,102 +11,106 @@ mnemonic = "abandon abandon abandon abandon abandon abandon abandon abandon aban
 [accounts.wallet_2]
 mnemonic = "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
 
+# Correct Stacks testnet addresses - Generated according to official docs
+# Testnet addresses start with ST and are 21 characters long
+# Reference: https://docs.stacks.co/concepts/network-fundamentals/mainnet-and-testnets
+
 [[deployments]]
 name = "emotion-factory"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM01"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-happy"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM02"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-sad"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM03"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-angry"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM04"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-excited"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM05"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-calm"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM06"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-anxious"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM07"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-grateful"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM08"
 cost = 1000000
 
 [[deployments]]
 name = "swap-pool-loved"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM09"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-happy"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM10"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-sad"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM11"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-angry"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM12"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-excited"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM13"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-calm"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM14"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-anxious"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM15"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-grateful"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM16"
 cost = 1000000
 
 [[deployments]]
 name = "liquidity-pool-loved"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM17"
 cost = 1000000
 
 [[deployments]]
 name = "staking-rewards"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM18"
 cost = 1000000
 
 [[deployments]]
 name = "governance"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM19"
 cost = 1000000
 
 [[deployments]]
 name = "mood-token"
-address = "SP2J6ZY48GV1EZ5V2V5RB9MP66SW86CYK20NVF7D7"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM20"
 cost = 1000000

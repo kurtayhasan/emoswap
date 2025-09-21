@@ -1,32 +1,28 @@
 ;; EmoSwap - Swap Pool Contract
 ;; Constant-product AMM for emotion/ALGO pairs
 
-(define-constant ADMIN (tx-sender))
+(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
+
 (define-constant FEE-DENOMINATOR (u10000))
 (define-constant FEE-NUMERATOR (u30)) ;; 0.3% fee
-
 (define-data-var asset-id uint u0)
 (define-data-var algo-reserve uint u0)
 (define-data-var asset-reserve uint u0)
 (define-data-var total-supply uint u0)
-
 (define-map balances principal uint)
-
 ;; Error codes
 (define-constant ERR-UNAUTHORIZED (err u200))
 (define-constant ERR-INSUFFICIENT-LIQUIDITY (err u201))
 (define-constant ERR-INSUFFICIENT-BALANCE (err u202))
 (define-constant ERR-INVALID-AMOUNT (err u203))
 (define-constant ERR-SLIPPAGE (err u204))
-
 ;; Initialize pool
 (define-public (initialize-pool (token-asset-id uint))
   (begin
-    (asserts! (is-eq (tx-sender) ADMIN) ERR-UNAUTHORIZED)
+    (asserts! (is-eq (tx-sender) (var-get admin)) ERR-UNAUTHORIZED)
     (asserts! (is-eq (var-get asset-id) u0) ERR-UNAUTHORIZED)
     (ok (var-set asset-id token-asset-id))
   ))
-
 ;; Add liquidity
 (define-public (add-liquidity (algo-amount uint) (asset-amount uint))
   (let
@@ -69,7 +65,6 @@
       )
     )
   ))
-
 ;; Remove liquidity
 (define-public (remove-liquidity (shares uint))
   (let
@@ -98,7 +93,6 @@
       )
     )
   ))
-
 ;; Swap ALGO for Asset
 (define-public (swap-algo-for-asset (algo-amount uint) (min-asset-amount uint))
   (let
@@ -122,7 +116,6 @@
       ))
     )
   ))
-
 ;; Swap Asset for ALGO
 (define-public (swap-asset-for-algo (asset-amount uint) (min-algo-amount uint))
   (let
@@ -146,12 +139,10 @@
       ))
     )
   ))
-
 ;; Get reserves
 (define-read-only (get-reserves)
   (ok (tuple (algo-reserve (var-get algo-reserve)) (asset-reserve (var-get asset-reserve))))
 )
-
 ;; Get user balance
 (define-read-only (get-balance (user principal))
   (ok (default-to u0 (map-get? balances user)))

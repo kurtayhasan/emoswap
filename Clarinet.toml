@@ -25,7 +25,7 @@ path = "contracts/governance.clar"
 
 [networks.testnet]
 name = "testnet"
-node_rpc_address = "https://stacks-node-api.testnet.stacks.co"
+node_rpc_address = "https://api.testnet.hiro.so"
 node_p2p_address = "stacks-node-api.testnet.stacks.co:20443"
 deployment_fee_tx_url = "https://explorer.stacks.co/txid/"
 
