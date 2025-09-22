@@ -11,36 +11,36 @@ plan:
         - contract-publish:
             contract-name: emotion-factory
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 60760
-            path: "contracts\\emotion-factory.clar"
+            cost: 112359
+            path: "contracts/emotion-factory.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: governance
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 60958
-            path: "contracts\\governance.clar"
+            cost: 112724
+            path: "contracts/governance.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: liquidity-pool
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 60870
-            path: "contracts\\liquidity-pool.clar"
+            cost: 112562
+            path: "contracts/liquidity-pool.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: staking-rewards
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 60914
-            path: "contracts\\staking-rewards.clar"
+            cost: 112643
+            path: "contracts/staking-rewards.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: swap-pool
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 60936
-            path: "contracts\\swap-pool.clar"
+            cost: 112683
+            path: "contracts/swap-pool.clar"
             anchor-block-only: true
             clarity-version: 1
       epoch: "2.05"
