@@ -11,35 +11,35 @@ plan:
         - contract-publish:
             contract-name: emotion-factory
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 112359
+            cost: 35712836
             path: "contracts/emotion-factory.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: governance
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 112724
+            cost: 35828850
             path: "contracts/governance.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: liquidity-pool
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 112562
+            cost: 35777288
             path: "contracts/liquidity-pool.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: staking-rewards
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 112643
+            cost: 35803069
             path: "contracts/staking-rewards.clar"
             anchor-block-only: true
             clarity-version: 1
         - contract-publish:
             contract-name: swap-pool
             expected-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            cost: 112683
+            cost: 35815959
             path: "contracts/swap-pool.clar"
             anchor-block-only: true
             clarity-version: 1

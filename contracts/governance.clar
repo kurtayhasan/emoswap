@@ -1,8 +1,6 @@
 ;; EmoSwap - Governance Contract
 ;; Manages protocol parameters and voting
-
-(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
-
+(define-data-var admin principal 'STQTJN7JQ90K7B9TVBRWYC924HAXJD308VSA51X)
 (define-constant VOTING-PERIOD (u10080)) ;; 1 week in blocks
 (define-constant QUORUM-THRESHOLD (u5000)) ;; 50%
 (define-data-var proposal-count uint u0)

@@ -1,8 +1,7 @@
 ;; EmoSwap - Emotion Factory Contract
 ;; Manages emotion token creation and daily minting
 
-(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
-
+(define-data-var admin principal 'STQTJN7JQ90K7B9TVBRWYC924HAXJD308VSA51X)
 (define-constant EMOTION-COUNT (u0))
 (define-constant MINT-AMOUNT (u1000000)) ;; 1M microALGO per emotion
 (define-constant PAUSED (false))

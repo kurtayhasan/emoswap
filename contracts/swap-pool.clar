@@ -1,8 +1,6 @@
 ;; EmoSwap - Swap Pool Contract
 ;; Constant-product AMM for emotion/ALGO pairs
-
-(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
-
+(define-data-var admin principal 'STQTJN7JQ90K7B9TVBRWYC924HAXJD308VSA51X)
 (define-constant FEE-DENOMINATOR (u10000))
 (define-constant FEE-NUMERATOR (u30)) ;; 0.3% fee
 (define-data-var asset-id uint u0)

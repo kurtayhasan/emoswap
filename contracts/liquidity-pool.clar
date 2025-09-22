@@ -1,7 +1,6 @@
 ;; EmoSwap - Liquidity Pool Contract
 ;; Manages liquidity provision for emotion/ALGO pairs
-
-(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
+(define-data-var admin principal 'STQTJN7JQ90K7B9TVBRWYC924HAXJD308VSA51X)
 (define-data-var asset-id uint u0)
 (define-data-var total-liquidity uint u0)
 (define-data-var lp-token-supply uint u0)

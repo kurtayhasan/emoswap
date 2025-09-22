@@ -1,8 +1,6 @@
 ;; EmoSwap - Staking Rewards Contract
 ;; Manages LP token staking and $MOOD token rewards
-
-(define-data-var admin principal 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)
-
+(define-data-var admin principal 'STQTJN7JQ90K7B9TVBRWYC924HAXJD308VSA51X)
 (define-constant EMISSION-RATE (u100)) ;; 100 MOOD per block
 (define-constant REWARD-DENOMINATOR (u1000000))
 (define-data-var total-staked uint u0)
